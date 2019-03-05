@@ -1,0 +1,100 @@
+=== LAB-HAL ===
+Contributors: Christophe Seguinot (lab-HAL), Baptiste Blondelle (wp-HAL), friz, CCSD , Emmanuel Leguy (partie Angular Js glanée sur le site https://www.cristal.univ-lille.fr)
+Tags: publication, HAL
+Requires at least: 4.9
+Tested up to: 5.0.3
+Stable tag: 0.0
+License: GPLv3
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+
+/* 
+ * This plugin allows authors or structures to display their HAL registered publications on a Wordpress article or page
+ * and a widget of recent publications of an author or a structure.
+ * LAB-HAL publication data are directly extracted from HAL website (http://hal.archives-ouvertes.fr/).
+ *
+ * Ce plugin est une adaptation du plugin wp-HAL de Baptiste Blondelle . Il Crée une page qui remonte les publications 
+ * d'un auteur ou d'une structure en relation avec HAL et un widget des dernières publications d'un auteur ou d'une structure.
+ *
+ * Le Plugin lab-HAL sera prochainement mis en ligne (Github?) 
+ * Ce plugin est en cours de développement, quelques fonctionnalités du plugin original ne sont pas encore implémentées. 
+ * le widget dernières publications n'a pas été impléménte/testé
+ * le graphique affichant les statistiques par type de publications n'a pas été impléménte/testé
+ * Merci de remonter les bugs et propositions à l'auteur christophe.seguinot@univ-lille.fr
+ */
+ 
+== TODO == 
+* scope.docTypeFilter = null; // Unused ??
+* implement version /update... 
+* test oldest plugin, remove all non used js/php code
+* languages: originaux en français ou anglais?  construire les fichiers de langue
+* remove CURL  
+
+== Changelog ==
+
+Version 0.1 release on ???
+
+* Improve: php file splitted in frontend and admin files 
+* Fix : unclosed div cause some template (Lectura) to be unusable 
+* Fix : "All" filters not working
+* New : Possibility to load truncated publication list to speed up page loading
+* Fix : Publications list not loaded when lastyears not initialized
+* New : lab-hal now uses angularjs 1.7.7
+* New : Truncate long authors list while adding an "et al.." button
+* Removed : duplicated javascript code
+* 
+
+Version 0.0 release on 12 february 2019
+
+=====================================================================================
+The remaining text on this readme.txt file is the original content of wp-hal plugin.
+=====================================================================================
+ 
+== Description ==
+
+This plugin allows authors or structures to display their HAL registered publications on a Wordpress article or page.
+LAB-HAL publication data are directly extracted from HAL website (http://hal.archives-ouvertes.fr/).
+
+== Installation ==
+
+= Requires : =
+* PHP 7 or higher
+* WordPress 4.0 or higher
+
+= Automated Upgrade procedure : =
+not available in version 0.0
+
+= Manual installation/upgrade procedure : =
+
+1. Desactivate lab-hal plugin if you have the previous version installed.
+2. Unzip "lab-hal" archive and put all files into folder "/wp-content/plugins/lab-hal".
+3. Activate "lab-hal" plugin via 'Plugins' menu in WordPress admin menu.
+
+= For the page : =
+
+4. Go to the "Hal" menu item and select parameters to display options needed in your blog.
+5. Create your page and add the shortcode [cv-hal] to see publications and metadata.
+
+= For the widget : =
+
+4. Go to the menu "Appearance", "Widgets" to configure the widget "Lastest Publications".
+
+
+= How to display the page on the site ? =
+
+You need to create your own page with wordpress and put the shortcode [cv-hal] on the content.
+
+= What can i do to personalize my page ? =
+
+You can display multiple page with different IDs with parameters on the shortcode, example : [cv-hal id=184 type=authStructId_i]
+
+Type of identifier are :
+
+* IdHal = authIdHal_s
+* Structure Id = structId_i
+* AuthorStructure Id = authStructId_i
+* ANR Project Id = anrProjectId_i
+* European Project Id = europeanProjectId_i
+* Collection Id = collCode_s
+
+You can add in the shortcode "contact=yes" or "contact=no" to recover HAL Contact.
+

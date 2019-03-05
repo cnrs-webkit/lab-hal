@@ -1,0 +1,288 @@
+/* BEGIN Ajout pour lab-hal */
+
+    
+div.ng-scope {
+	border-top: 1px solid #ccc;
+	padding-bottom: 6px;
+	padding-top: 6px;
+}
+
+div.ng-scope:hover {
+	background: #eee;
+}
+
+div.ng-scope p {
+	margin: 0;
+}
+	
+.col-md-8 {
+	width: 75%;
+	float: left; 
+}
+.col-md-4 {
+	width: 20%;
+	float: right;
+}
+/*  smaller size (screen width  */
+
+@media screen and (max-width:910px) {
+.col-md-8, .col-md-4  {
+	width:100%;
+	}
+}
+  
+.lab-hal-footer{
+	color: #ddd;
+	margin-top: 1em;
+}
+.lab-hal-footer p a img {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.label {
+    font-weight: normal;
+    text-transform: none;
+    padding: 0.2em 0.2em 0.2em;
+    display: inline-block;
+    font-size: 90%;
+    line-height: 1;
+    color: #fff;
+    vertical-align: baseline;
+    border-radius: .25em;
+    margin:2px;
+}
+
+.label-all-less-btn {
+	background-color: #ddd;
+}
+
+/* http://www.informatik.uni-trier.de/~ley/faq/What+is+the+meaning+of+the+colors+in+the+publication+lists.html */
+/* DBLP: Books and Theses*/
+.label-these, .label-hdr, .label-ouv {
+	background-color: rgb(248, 201, 31);
+}
+/* DBLP: Journal Articles*/
+.label-art {
+	background-color: rgb(195, 43, 114);
+}
+/* DBLP: Conference and Workshop Papers*/
+.label-comm, .label-presconf, .label-poster {
+	background-color: rgb(25, 108, 163);
+}
+/* DBLP: Parts in Books or Collections */
+.label-couv {
+	background-color: rgb(239, 148, 45);
+}
+/* DBLP: editorship */
+.label-douv {
+	background-color: rgb(154, 236, 200);
+}
+/* DBLP: Reference Works*/
+.label-ref {
+	background-color: rgb(150, 173, 44);
+}
+/* DBLP: Informal and Other Publications */
+.label-other, .label-undefined, .label-report, .label-mem, .label-patent, .label-lecture, .label-img, .label-video, .label-son, .label-map, .label-minutes, .label-note, .label-otherreport {
+	background-color: rgb(96, 107, 112);
+}
+.label-tout {
+	background-color: black;
+}
+/* Used for years */
+.label-success {
+    background-color: #5cb85c;
+}
+.dashicons-media-default {
+	color: rgb(126, 137, 152);
+    width: 1em;
+    font-size: 1em;
+}
+}
+/* END Ajout pour lab-hal */
+
+
+
+/* Page HAL CSS */
+
+#lab-hal-keys {
+    text-align : justify;
+    word-wrap: break-word;
+}
+
+#lab-hal-keys a{
+    text-decoration:none;
+    white-space: nowrap;
+}
+
+#lab-hal-aut{
+    max-height : 500px;
+    overflow: auto;
+}
+
+#lab-hal-discipline{
+    max-height : 500px;
+    overflow: auto;
+}
+
+#lab-hal-keyw{
+    max-height : 500px;
+    overflow: auto;
+}
+
+#lab-hal-rev{
+    max-height : 500px;
+    overflow: auto;
+}
+
+#lab-hal-an{
+    max-height : 500px;
+    overflow: auto;
+}
+
+#lab-hal-institu{
+    max-height : 500px;
+    overflow: auto;
+}
+
+#lab-hal-labo{
+    max-height : 500px;
+    overflow: auto;
+}
+
+#lab-hal-dpt{
+    max-height : 500px;
+    overflow: auto;
+}
+
+#lab-hal-rteam{
+    max-height : 500px;
+    overflow: auto;
+}
+
+.grp-content{
+    max-height : 250px;
+    overflow: auto;
+}
+
+
+ul.lab-hal-discipline li{
+    list-style: none !important;
+}
+
+#lab-hal-menu, #lab-hal-menu ul{
+    padding: 5px;
+    margin: 0;
+    list-style: none;
+}
+
+
+#lab-hal-menu li {
+    display: inline-block;
+    padding-right: 10px;
+}
+#lab-hal-menu li ul {
+    padding: 8px 8px 8px 16px;
+    background: #fff;
+    border : 1px solid #BEBEBE;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#lab-hal-menu a {
+    border-bottom: none !important;
+    text-decoration: none !important;
+    display: block;
+}
+#lab-hal-menu ul {
+    position: absolute;
+    left: -999em;
+    text-align: left;
+    width: 450px;
+    padding: 5px;
+}
+#lab-hal-menu li:hover ul {
+    left: auto;
+}
+
+.lab-hal-pagination {
+    text-align: center;
+    margin: 20px;
+}
+
+.lab-hal-pagination a, .lab-hal-pagination li {
+    background: #fff;
+    display: inline-block;
+    padding: 4px 8px;
+    border-bottom: none !important;
+    text-decoration: none !important;
+    line-height: 1.5em;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.lab-hal-pagination .disabled {
+    pointer-events: none;
+}
+
+.lab-hal-pagination a:hover {
+    background-color: #BEBEBE;
+    color: #fff;
+}
+
+.lab-hal-pagination .active a{
+    background: #BEBEBE;
+}
+
+#lab-hal-content button{
+    margin : 5px;
+}
+
+.lab-hal-infocontact {
+    margin-bottom : 15px;
+}
+
+.grp-div .lab-hal-titre-groupe{
+    padding: 10px;
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 16px;
+    background-color: #f7f7f7;
+    text-transform: uppercase;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.grp-div .grp-content {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.lab-hal-nbmetadata {
+    float:right;
+    color:#999999;
+    font-weight:normal;
+    text-transform: lowercase;
+    font-size: 12px;
+}
+
+.lab-hal-nbtot {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+
+/* Widget CSS */
+
+.widldhal-li {
+    padding-bottom : 5px;
+}
+
+.widldhal-ul {
+    
+}

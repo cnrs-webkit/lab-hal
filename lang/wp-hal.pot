@@ -1,0 +1,201 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: lab-hal\n"
+"POT-Creation-Date: 2016-02-05 13:41+0100\n"
+"PO-Revision-Date: 2014-06-03 10:48+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-KeywordsList: __;gettext;gettext_noop;_n\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=n>1;\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: lab-hal.php:15
+msgid ""
+"Crée une page qui remonte les publications d'un auteur ou d'une structure en "
+"relation avec HAL et un widget des dernières publications d'un auteur ou "
+"d'une structure."
+msgstr ""
+
+#: lab-hal.php:43
+msgid "Paramètres"
+msgstr ""
+
+#: lab-hal.php:113
+msgid "Publications"
+msgstr ""
+
+#: lab-hal.php:115
+msgid "Filtres"
+msgstr ""
+
+#: lab-hal.php:118 lab-hal.php:163 lab-hal.php:1017
+msgid "Contact"
+msgstr ""
+
+#: lab-hal.php:122 lab-hal.php:188 lab-hal.php:1018
+msgid "Disciplines"
+msgstr ""
+
+#: lab-hal.php:126 lab-hal.php:221 lab-hal.php:1019
+msgid "Mots-clefs"
+msgstr ""
+
+#: lab-hal.php:130 lab-hal.php:264 lab-hal.php:1020
+msgid "Auteurs"
+msgstr ""
+
+#: lab-hal.php:134 lab-hal.php:304 lab-hal.php:1021
+msgid "Revues"
+msgstr ""
+
+#: lab-hal.php:138 lab-hal.php:344 lab-hal.php:1022
+msgid "Année de production"
+msgstr ""
+
+#: lab-hal.php:142 lab-hal.php:384 lab-hal.php:1023
+msgid "Institutions"
+msgstr ""
+
+#: lab-hal.php:146 lab-hal.php:424 lab-hal.php:1024
+msgid "Laboratoires"
+msgstr ""
+
+#: lab-hal.php:150 lab-hal.php:465 lab-hal.php:1025
+msgid "Départements"
+msgstr ""
+
+#: lab-hal.php:154 lab-hal.php:505 lab-hal.php:1026
+msgid "Équipes de recherche"
+msgstr ""
+
+#: lab-hal.php:216 lab-hal.php:777
+msgid "Graphique"
+msgstr ""
+
+#: lab-hal.php:259 lab-hal.php:298 lab-hal.php:338 lab-hal.php:378 lab-hal.php:418
+#: lab-hal.php:459 lab-hal.php:499 lab-hal.php:539 lab-hal.php:777
+msgid "Liste complète"
+msgstr ""
+
+#: lab-hal.php:550 lab-hal.php:572
+msgid "documents"
+msgstr ""
+
+#: lab-hal.php:558
+msgid "document"
+msgstr ""
+
+#: lab-hal.php:690
+msgid "Documents récupérés de l'archive ouverte HAL"
+msgstr ""
+
+#: lab-hal.php:777
+msgid "Liste"
+msgstr ""
+
+#: lab-hal.php:777
+msgid "Liste principale"
+msgstr ""
+
+#: lab-hal.php:777
+msgid "Nuage de mots"
+msgstr ""
+
+#: lab-hal.php:838
+msgid "Afficher les dernières publications d'un auteur ou d'une structure."
+msgstr ""
+
+#: lab-hal.php:843 lab-hal.php:918
+msgid "Publications récentes"
+msgstr ""
+
+#: lab-hal.php:926 lab-hal.php:936
+msgid "Titre"
+msgstr ""
+
+#: lab-hal.php:930
+msgid "Nombre de documents affichés"
+msgstr ""
+
+#: lab-hal.php:934
+msgid "Type d'affichage"
+msgstr ""
+
+#: lab-hal.php:937
+msgid "Citation"
+msgstr ""
+
+#: lab-hal.php:941 lab-hal.php:998
+msgid "Type d'Id"
+msgstr ""
+
+#: lab-hal.php:943 lab-hal.php:1000
+msgid "(Exemple : laurent-capelli)"
+msgstr ""
+
+#: lab-hal.php:944 lab-hal.php:1001
+msgid "(Exemple : 129)"
+msgstr ""
+
+#: lab-hal.php:945 lab-hal.php:1002
+msgid "(Exemple : 1646)"
+msgstr ""
+
+#: lab-hal.php:946 lab-hal.php:1003
+msgid "(Exemple : 17877)"
+msgstr ""
+
+#: lab-hal.php:947 lab-hal.php:1004
+msgid "(Exemple : TICE2014)"
+msgstr ""
+
+#: lab-hal.php:951
+msgid "Id"
+msgstr ""
+
+#: lab-hal.php:986
+msgid "Plugin LAB-HAL"
+msgstr ""
+
+#: lab-hal.php:995
+msgid "Paramètre de la page :"
+msgstr ""
+
+#: lab-hal.php:1010
+msgid "Affichage des documents"
+msgstr ""
+
+#: lab-hal.php:1011
+msgid "Documents avec pagination"
+msgstr ""
+
+#: lab-hal.php:1012
+msgid "Documents groupés par type"
+msgstr ""
+
+#: lab-hal.php:1016
+msgid "Choix des éléments menu"
+msgstr ""
+
+#: lab-hal.php:1030
+msgid "Contact :"
+msgstr ""
+
+#: lab-hal.php:1033
+msgid "Email"
+msgstr ""
+
+#: lab-hal.php:1037
+msgid "Téléphone"
+msgstr ""
+
+#: lab-hal.php:1058
+msgid "Enregistrer"
+msgstr ""
