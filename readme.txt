@@ -43,11 +43,8 @@ Version 0.1 release on ???
 * Removed : duplicated javascript code
 * 
 
+== Version == 
 Version 0.0 release on 12 february 2019
-
-=====================================================================================
-The remaining text on this readme.txt file is the original content of wp-hal plugin.
-=====================================================================================
  
 == Description ==
 
@@ -69,32 +66,8 @@ not available in version 0.0
 2. Unzip "lab-hal" archive and put all files into folder "/wp-content/plugins/lab-hal".
 3. Activate "lab-hal" plugin via 'Plugins' menu in WordPress admin menu.
 
-= For the page : =
-
-4. Go to the "Hal" menu item and select parameters to display options needed in your blog.
-5. Create your page and add the shortcode [cv-hal] to see publications and metadata.
-
-= For the widget : =
-
-4. Go to the menu "Appearance", "Widgets" to configure the widget "Lastest Publications".
-
-
 = How to display the page on the site ? =
 
-You need to create your own page with wordpress and put the shortcode [cv-hal] on the content.
-
-= What can i do to personalize my page ? =
-
-You can display multiple page with different IDs with parameters on the shortcode, example : [cv-hal id=184 type=authStructId_i]
-
-Type of identifier are :
-
-* IdHal = authIdHal_s
-* Structure Id = structId_i
-* AuthorStructure Id = authStructId_i
-* ANR Project Id = anrProjectId_i
-* European Project Id = europeanProjectId_i
-* Collection Id = collCode_s
-
-You can add in the shortcode "contact=yes" or "contact=no" to recover HAL Contact.
+You need to create your own page with wordpress and put the shortcode [lab-hal-list] on the content.
+Further information goto settings/lab-hal and open upper right help tab.
 
