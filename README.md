@@ -59,7 +59,7 @@ not available in version 0.0
 2. Unzip "lab-hal" archive and put all files into folder "/wp-content/plugins/lab-hal".
 3. Activate "lab-hal" plugin via 'Plugins' menu in WordPress admin menu.
 
-# How to display the page on the site ?
+# How to display publication list on the site ?
 
 You need to create your own page with wordpress and put the shortcode [lab-hal-list] on the content.
 Further information goto settings/lab-hal and open upper right help tab.
