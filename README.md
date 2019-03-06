@@ -39,7 +39,6 @@ Version 0.1 release on ???
 - New : lab-hal now uses angularjs 1.7.7
 * New : Truncate long authors list while adding an "et al.." button
 * Removed : duplicated javascript code
-* 
 
 ## Version
 Version 0.0 release on 12 february 2019
