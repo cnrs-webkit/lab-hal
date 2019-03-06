@@ -1,4 +1,4 @@
-#LAB-HAL
+# LAB-HAL
 - Contributors: Christophe Seguinot (lab-HAL), Baptiste Blondelle (wp-HAL), friz, CCSD , Emmanuel Leguy (partie Angular Js glanée sur le site https://www.cristal.univ-lille.fr)
 - Tags: publication, HAL
 - Requires at least: 4.9
@@ -7,11 +7,12 @@
 - License: GPLv3
 - License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-- This plugin allows authors or structures to display their HAL registered publications on a Wordpress article or page
-and a widget of recent publications of an author or a structure.
-- LAB-HAL publication data are directly extracted from HAL website (http://hal.archives-ouvertes.fr/).
+## Description
 
-- Ce plugin est une adaptation du plugin wp-HAL de Baptiste Blondelle . Il Crée une page qui remonte les publications d'un auteur ou d'une structure en relation avec HAL et un widget des dernières publications d'un auteur ou d'une structure.
+This plugin allows authors or structures to display their HAL registered publications on a Wordpress article or page.
+LAB-HAL publication data are directly extracted from HAL website (http://hal.archives-ouvertes.fr/).
+
+Ce plugin est une adaptation du plugin wp-HAL de Baptiste Blondelle . Il Crée une page qui remonte les publications d'un auteur ou d'une structure en relation avec HAL et un widget des dernières publications d'un auteur ou d'une structure.
 
 - Ce plugin est en cours de développement, quelques fonctionnalités du plugin original ne sont pas encore implémentées. 
 - le widget dernières publications n'a pas été impléménte/testé
@@ -43,11 +44,6 @@ Version 0.1 release on ???
 ## Version
 Version 0.0 release on 12 february 2019
  
-## Description
-
-This plugin allows authors or structures to display their HAL registered publications on a Wordpress article or page.
-LAB-HAL publication data are directly extracted from HAL website (http://hal.archives-ouvertes.fr/).
-
 ## Installation
 
 # Requires :
