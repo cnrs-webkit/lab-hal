@@ -1,4 +1,4 @@
-=== LAB-HAL ===
+### LAB-HAL
 Contributors: Christophe Seguinot (lab-HAL), Baptiste Blondelle (wp-HAL), friz, CCSD , Emmanuel Leguy (partie Angular Js glanée sur le site https://www.cristal.univ-lille.fr)
 Tags: publication, HAL
 Requires at least: 4.9
@@ -22,14 +22,14 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
  * Merci de remonter les bugs et propositions à l'auteur christophe.seguinot@univ-lille.fr
  */
  
-== TODO == 
+## TODO
 * scope.docTypeFilter = null; // Unused ??
 * implement version /update... 
 * test oldest plugin, remove all non used js/php code
 * languages: originaux en français ou anglais?  construire les fichiers de langue
 * remove CURL  
 
-== Changelog ==
+## Changelog ==
 
 Version 0.1 release on ???
 
@@ -43,30 +43,30 @@ Version 0.1 release on ???
 * Removed : duplicated javascript code
 * 
 
-== Version == 
+## Version
 Version 0.0 release on 12 february 2019
  
-== Description ==
+## Description
 
 This plugin allows authors or structures to display their HAL registered publications on a Wordpress article or page.
 LAB-HAL publication data are directly extracted from HAL website (http://hal.archives-ouvertes.fr/).
 
-== Installation ==
+## Installation
 
-= Requires : =
+# Requires :
 * PHP 7 or higher
 * WordPress 4.0 or higher
 
-= Automated Upgrade procedure : =
+# Automated Upgrade procedure :
 not available in version 0.0
 
-= Manual installation/upgrade procedure : =
+# Manual installation/upgrade procedure :
 
 1. Desactivate lab-hal plugin if you have the previous version installed.
 2. Unzip "lab-hal" archive and put all files into folder "/wp-content/plugins/lab-hal".
 3. Activate "lab-hal" plugin via 'Plugins' menu in WordPress admin menu.
 
-= How to display the page on the site ? =
+# How to display the page on the site ?
 
 You need to create your own page with wordpress and put the shortcode [lab-hal-list] on the content.
 Further information goto settings/lab-hal and open upper right help tab.
