@@ -27,7 +27,7 @@ Ce plugin est une adaptation du plugin wp-HAL de Baptiste Blondelle . Il Crée u
 - languages: originaux en français ou anglais?  construire les fichiers de langue
 - remove CURL  
 
-## Changelog ==
+## Changelog
 
 Version 0.1 release on ???
 
