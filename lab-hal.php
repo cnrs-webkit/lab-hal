@@ -53,7 +53,7 @@ if ( is_admin() ) {
  */
 
 /**
- * Initialise le nouveau widget
+ * Initialise le nouveau widget temporay unactivated!
  */
 
 /*
