@@ -17,7 +17,7 @@
  * Contributors: Baptiste Blondelle (wp-HAL), Emmanuel Leguy (partie Angular Js glanée sur le site https://www.cristal.univ-lille.fr)
  * Author URI:   christophe.seguinot@univ-lille.fr
  * Text Domain:  lab-hal
- * Domain Path:  /lang/
+ * Domain Path:  /languages
  */
 
 /**

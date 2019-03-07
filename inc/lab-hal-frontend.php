@@ -17,7 +17,7 @@
  * Contributors: Baptiste Blondelle (wp-HAL), Emmanuel Leguy (partie Angular Js glanée sur le site https://www.cristal.univ-lille.fr)
  * Author URI:   christophe.seguinot@univ-lille.fr
  * Text Domain:  lab-hal
- * Domain Path:  /lang/
+ * Domain Path:  /languages
  */
 
 /**
@@ -149,7 +149,7 @@ function lab_hal_list( $param ) {
     <div class="row">
     	<div class="col-md-8">
     		<div ng-show="loading">
-				<h3>Loading...<img alt="loading" src="' . plugin_dir_url( __FILE__ ) . 'img/loading.gif" height="16" /></h3>
+				<h3>Loading...<img alt="loading" src="' . LAB_HAL_URI . 'img/loading.gif" height="16" /></h3>
     			<p>' . __( 'Publications list with more than 500 items may require more than 10 second to load. Be patient! ', 'lab-hal' ) . '</p>
     		</div>
     		<div ng-hide="loading" class="ng-hide">
@@ -242,7 +242,7 @@ function lab_hal_list( $param ) {
  * Add styles
  */
 function lab_hal_wp_adding_style() {
-	wp_register_style( 'lab-hal-style1', plugins_url( '/css/style.css', __FILE__ ), '', LAB_HAL_VERSION );
+	wp_register_style( 'lab-hal-style1', LAB_HAL_URI . '/css/style.css', '', LAB_HAL_VERSION );
 	// TODO not used wp_register_style( 'lab-hal-style2', plugins_url( '/css/jquery.jqplot.css', __FILE__ ), '', LAB_HAL_VERSION );.
 	wp_enqueue_style( 'lab-hal-style1' );
 }
@@ -251,11 +251,11 @@ function lab_hal_wp_adding_style() {
  * Register and Add scripts
  */
 function lab_hal_wp_adding_script() {
-	wp_register_script( 'lab-hal-script1', plugins_url( '/js/jquery.jqplot.js', __FILE__ ), '', '1.0.8', true );
-	wp_register_script( 'lab-hal-script2', plugins_url( '/js/jqplot.highlighter.js', __FILE__ ), '', '1.0.8', true );
-	wp_register_script( 'lab-hal-script3', plugins_url( '/js/jqplot.pieRenderer.js', __FILE__ ), '', '1.0.8', true );
+	wp_register_script( 'lab-hal-script1', LAB_HAL_URI . '/js/jquery.jqplot.js', '', '1.0.8', true );
+	wp_register_script( 'lab-hal-script2', LAB_HAL_URI . '/js/jqplot.highlighter.js', '', '1.0.8', true );
+	wp_register_script( 'lab-hal-script3', LAB_HAL_URI . '/js/jqplot.pieRenderer.js', '', '1.0.8', true );
 
-	wp_register_script( 'lab-hal-publis', plugins_url( '/js/publis.js', __FILE__ ), '', LAB_HAL_VERSION, true );
+	wp_register_script( 'lab-hal-publis', LAB_HAL_URI . '/js/publis.js', '', LAB_HAL_VERSION, true );
 	wp_register_script( 'lab-hal-angular', 'https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js', '', '1.7.7', true );
 	wp_register_script( 'lab-hal-angular-sanitize', 'https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular-sanitize.min.js', '', '1.7.7', true );
 
@@ -264,7 +264,7 @@ function lab_hal_wp_adding_script() {
 	wp_enqueue_script( 'lab-hal-angular-sanitize' );
 	wp_enqueue_script( 'lab-hal-publis' );
 
-	wp_enqueue_script( 'lab-hal-script4', plugins_url( '/js/cv-hal.js', __FILE__ ), '', LAB_HAL_VERSION, true );
+	wp_enqueue_script( 'lab-hal-script4', LAB_HAL_URI . '/js/cv-hal.js', '', LAB_HAL_VERSION, true );
 }
 
 /**

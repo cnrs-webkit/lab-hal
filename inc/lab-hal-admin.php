@@ -12,12 +12,12 @@
  * Plugin Name:  LAB-HAL
  * Plugin URI:
  * Description:  Ce plugin est une adaptation du plugin wp-HAL de Baptiste Blondelle . Il Crée une page qui remonte les publications d'un auteur ou d'une structure en relation avec HAL et un widget des dernières publications d'un auteur ou d'une structure.
- * Version:      0.0
+ * Version:      0.1
  * Author:       Christophe Seguinot
  * Contributors: Baptiste Blondelle (wp-HAL), Emmanuel Leguy (partie Angular Js glanée sur le site https://www.cristal.univ-lille.fr)
  * Author URI:   christophe.seguinot@univ-lille.fr
  * Text Domain:  lab-hal
- * Domain Path:  /lang/
+ * Domain Path:  /languages
  */
 
 /**
@@ -31,8 +31,8 @@
  */
 function lab_hal_upgrader_pre_download( $reply, $package, $instance ) {
 	if ( strpos( $package, 'lab-hal' ) && (
-			file_exists( plugin_dir_path( __FILE__ ) . '.gitignore' )
-			|| file_exists( plugin_dir_path( __FILE__ ) . '.project' ) ) ) {
+		file_exists( LAB_HAL_DIR . '/.gitignore' )
+		|| file_exists( LAB_HAL_DIR . '/.project' ) ) ) {
 				// Cancel this update.
 				return new WP_Error( 'update canceled', __( 'Lab-hal plugin update has been canceled because corresponding folder is a git folder and/or an eclipse project', 'lab-hal' ) );
 	}
@@ -51,7 +51,7 @@ add_filter( 'upgrader_pre_download', 'lab_hal_upgrader_pre_download', 10, 3 );
  * @return $links : modified list of action
  */
 function lab_hal_plugin_action_links( $links, $file ) {
-	if ( plugin_basename( __FILE__ ) !== $file ) {
+	if ( 'lab-hal/lab-hal.php'  !== $file ) {
 		return $links;
 	}
 
@@ -225,27 +225,27 @@ function lab_hal_option() {
 								</td>
 							<tr>
 								<th scope="row"><?php esc_html_e( 'Email', 'lab-hal' ); ?></th>
-								<td><input type="text" style="width:300px;" placeholder="Exemple : hi@mail.com" name="lab_hal_option_email" id="lab_hal_option_email" value="<?php echo esc_html( get_option( 'lab_hal_option_email' ) ); ?>"/><img alt="email" src="<?php echo esc_html( plugin_dir_url( __FILE__ ) ); ?>img/mail.svg" style="vertical-align:middle; width:32px; margin-left:2px; margin-right:2px;"/></td>
+								<td><input type="text" style="width:300px;" placeholder="Exemple : hi@mail.com" name="lab_hal_option_email" id="lab_hal_option_email" value="<?php echo esc_html( get_option( 'lab_hal_option_email' ) ); ?>"/><img alt="email" src="<?php echo esc_html( LAB_HAL_URI ); ?>img/mail.svg" style="vertical-align:middle; width:32px; margin-left:2px; margin-right:2px;"/></td>
 							</tr>
 							<tr>
 								<th scope="row"><?php esc_html_e( 'Téléphone', 'lab-hal' ); ?></th>
-								<td><input type="text" style="width:300px;" placeholder="Exemple : 06-01-02-03-04" name="lab_hal_option_tel" id="lab_hal_option_tel" value="<?php echo esc_html( get_option( 'lab_hal_option_tel' ) ); ?>"/><img alt="phone" src="<?php echo esc_html( plugin_dir_url( __FILE__ ) ); ?>img/phone.svg" style="vertical-align:middle; width:32px; margin-left:2px; margin-right:2px;"/></td>
+								<td><input type="text" style="width:300px;" placeholder="Exemple : 06-01-02-03-04" name="lab_hal_option_tel" id="lab_hal_option_tel" value="<?php echo esc_html( get_option( 'lab_hal_option_tel' ) ); ?>"/><img alt="phone" src="<?php echo esc_html( LAB_HAL_URI ); ?>img/phone.svg" style="vertical-align:middle; width:32px; margin-left:2px; margin-right:2px;"/></td>
 							</tr>
 							<tr>
 								<th>Facebook (http://www.facebook.com/)</th>
-								<td><input type="text" style="width:300px;" placeholder="Exemple : fa.book" name="lab_hal_option_social0" id="lab_hal_option_social0" value="<?php echo esc_html( get_option( 'lab_hal_option_social0' ) ); ?>"/><img alt="facebook" src="<?php echo esc_html( plugin_dir_url( __FILE__ ) ); ?>img/facebook.svg" style="vertical-align:middle; width:32px; margin-left:2px; margin-right:2px;"/></td>
+								<td><input type="text" style="width:300px;" placeholder="Exemple : fa.book" name="lab_hal_option_social0" id="lab_hal_option_social0" value="<?php echo esc_html( get_option( 'lab_hal_option_social0' ) ); ?>"/><img alt="facebook" src="<?php echo esc_html( LAB_HAL_URI ); ?>img/facebook.svg" style="vertical-align:middle; width:32px; margin-left:2px; margin-right:2px;"/></td>
 							</tr>
 							<tr>
 								<th>Twitter (http://www.twitter.com/)</th>
-								<td><input type="text" style="width:300px;" placeholder="Exemple : tweet_heure" name="lab_hal_option_social1" id="lab_hal_option_social1" value="<?php echo esc_html( get_option( 'lab_hal_option_social1' ) ); ?>"/><img alt="twitter" src="<?php echo esc_html( plugin_dir_url( __FILE__ ) ); ?>img/twitter.svg" style="vertical-align:middle; width:32px; margin-left:2px; margin-right:2px;"/></td>
+								<td><input type="text" style="width:300px;" placeholder="Exemple : tweet_heure" name="lab_hal_option_social1" id="lab_hal_option_social1" value="<?php echo esc_html( get_option( 'lab_hal_option_social1' ) ); ?>"/><img alt="twitter" src="<?php echo esc_html( LAB_HAL_URI ); ?>img/twitter.svg" style="vertical-align:middle; width:32px; margin-left:2px; margin-right:2px;"/></td>
 							</tr>
 							<tr>
 								<th>Google + (https://plus.google.com/u/0/+)</th>
-								<td><input type="text" style="width:300px;" placeholder="Exemple : goo.plus" name="lab_hal_option_social2" id="lab_hal_option_social2" value="<?php echo esc_html( get_option( 'lab_hal_option_social2' ) ); ?>"/><img alt="google" src="<?php echo esc_html( plugin_dir_url( __FILE__ ) ); ?>img/google-plus.svg" style="vertical-align:middle; width:32px; margin-left:2px; margin-right:2px;"/></td>
+								<td><input type="text" style="width:300px;" placeholder="Exemple : goo.plus" name="lab_hal_option_social2" id="lab_hal_option_social2" value="<?php echo esc_html( get_option( 'lab_hal_option_social2' ) ); ?>"/><img alt="google" src="<?php echo esc_html( LAB_HAL_URI ); ?>img/google-plus.svg" style="vertical-align:middle; width:32px; margin-left:2px; margin-right:2px;"/></td>
 							</tr>
 							<tr>
 								<th>LinkedIn (https://www.linkedin.com/in/)</th>
-								<td><input type="text" style="width:300px;" placeholder="Exemple : link.dine" name="lab_hal_option_social3" id="lab_hal_option_social3" value="<?php echo esc_html( get_option( 'lab_hal_option_social3' ) ); ?>"/><img alt="linkedin" src="<?php echo esc_html( plugin_dir_url( __FILE__ ) ); ?>img/linkedin.svg" style="vertical-align:middle; width:32px; margin-left:2px; margin-right:2px;"/></td>
+								<td><input type="text" style="width:300px;" placeholder="Exemple : link.dine" name="lab_hal_option_social3" id="lab_hal_option_social3" value="<?php echo esc_html( get_option( 'lab_hal_option_social3' ) ); ?>"/><img alt="linkedin" src="<?php echo esc_html( LAB_HAL_URI ); ?>img/linkedin.svg" style="vertical-align:middle; width:32px; margin-left:2px; margin-right:2px;"/></td>
 							</tr>
 						</table>
 						<?php

@@ -1,4 +1,4 @@
-#ATTENTION version de test et de développement
+# ATTENTION version de test et de développement
 __N'utiliser pas la version téléchargeable sur cette page du plugin (lab-hal-master.zip).__
 
 *Cette archive contient le suffixe -master* est installerait le plugin dans une répertoire /wp-content/plugins/lab-hal__-master__ au lieu de /wp-content/plugins/lab-hal. Cette installation serait fonctionelle mais peu facilement upgradable. 
@@ -35,8 +35,13 @@ Ce plugin est une adaptation du plugin wp-HAL de Baptiste Blondelle . Il Crée u
 
 ## Changelog
 
-Version 0.1 release on ???
+#### [Unreleased]
 
+#### Version 0.1 (2019 Mar. 9)
+- move admin, frontend and widget code to /inc
+- add GitHub Plugin URI for plugin-updater compatibility
+
+#### Version 0.0 (2019 Mar. 7)
 - Improve: php file splitted in frontend and admin files 
 - Fix : unclosed div cause some template (Lectura) to be unusable 
 - Fix : "All" filters not working
@@ -46,25 +51,22 @@ Version 0.1 release on ???
 * New : Truncate long authors list while adding an "et al.." button
 * Removed : duplicated javascript code
 
-## Version
-Version 0.0 release on 12 february 2019
- 
-## Installation
+## Installation / Usage
 
-# Requires :
+#### Requires :
 - PHP 7 or higher
 - WordPress 4.0 or higher
 
-# Automated Upgrade procedure :
+#### Automated Upgrade procedure :
 not available in version 0.0
 
-# Manual installation/upgrade procedure :
+#### Manual installation/upgrade procedure :
 
 1. Desactivate lab-hal plugin if you have the previous version installed.
 2. Unzip "lab-hal" archive and put all files into folder "/wp-content/plugins/lab-hal".
 3. Activate "lab-hal" plugin via 'Plugins' menu in WordPress admin menu.
 
-# How to display publication list on the site ?
+#### How to display publication list on the site ?
 
 You need to create your own page with wordpress and put the shortcode [lab-hal-list] on the content.
 Further information goto settings/lab-hal and open upper right help tab.

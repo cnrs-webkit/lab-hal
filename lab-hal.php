@@ -9,14 +9,16 @@
  * @license     GPL-3.0
  *
  * Plugin Name:  LAB-HAL
- * Plugin URI:
+ * Plugin URI:   https://github.com/cnrs-webkit/lab-hal
  * Description:  Ce plugin est une adaptation du plugin wp-HAL de Baptiste Blondelle . Il Crée une page qui remonte les publications d'un auteur ou d'une structure en relation avec HAL et un widget des dernières publications d'un auteur ou d'une structure.
  * Version:      0.0
  * Author:       Christophe Seguinot
+ * License:      http://www.gnu.org/licenses/gpl-3.0.html
  * Contributors: Baptiste Blondelle (wp-HAL), Emmanuel Leguy (partie Angular Js glanée sur le site https://www.cristal.univ-lille.fr)
  * Author URI:   christophe.seguinot@univ-lille.fr
  * Text Domain:  lab-hal
- * Domain Path:  /lang/
+ * Domain Path:  /languages
+ * GitHub Plugin URI: https://github.com/cnrs-webkit/lab-hal
  */
 
 // Constante de Version.
@@ -28,6 +30,10 @@ define( 'LAB_HAL_API', 'http://api.archives-ouvertes.fr/search/hal/' );
 // Constante pour le tri par date utilisé par le widget.
 define( 'LAB_HAL_PRODUCEDDATEY', rawurlencode( 'producedDateY_i desc' ) );
 
+// lab-hal plugin directory
+define( 'LAB_HAL_URI',  plugin_dir_url( __FILE__ ) );
+define( 'LAB_HAL_DIR',  dirname( __FILE__ ) );
+
 /*
  * Le Plugin lab-HAL sera prochainement mis en ligne (Github?)
  * Ce plugin est en cours de développement, quelques fonctionnalités du plugin original ne sont pas encore implémentées.
@@ -36,9 +42,9 @@ define( 'LAB_HAL_PRODUCEDDATEY', rawurlencode( 'producedDateY_i desc' ) );
  */
 
 if ( is_admin() ) {
-	require_once dirname( __FILE__ ) . '/lab-hal-admin.php';
+	require_once LAB_HAL_DIR . '/inc/lab-hal-admin.php';
 } else {
-	require_once dirname( __FILE__ ) . '/lab-hal-frontend.php';
+	require_once LAB_HAL_DIR . '/inc/lab-hal-frontend.php';
 }
 
 /**
@@ -47,7 +53,7 @@ if ( is_admin() ) {
 
 /*
  * TODO Test this widget before activation
- * require_once(dirname( __FILE__ ) . '/class-lab-hal-widget.php' );
+ * require_once(LAB_HAL_DIR . '/class-lab-hal-widget.php' );
  * add_action('widgets_init','lab_hal_init');.
  *
  */
@@ -92,6 +98,7 @@ add_filter( 'query_vars', 'add_query_vars_filter' );
  * Load one of the existing language translation (FR, ES), or GB english as a default
  */
 function lab_hal_load_language() {
+	//TODO languages not implemented yet!
 	load_plugin_textdomain( 'lab-hal', false, dirname( plugin_basename( __FILE__ ) ) . '/LAB_HAL_LANG/' );
 }
 
