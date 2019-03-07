@@ -1,9 +1,10 @@
-#ATTENTION version de test et de développement
+# ATTENTION version de test et de développement
 __N'utiliser pas la version téléchargeable sur cette page du plugin (lab-hal-master.zip).__
 
-*Cette archive contient le suffixe -master* est installerait le plugin dans une répertoire /wp-content/plugins/lab-hal__-master__ au lieu de /wp-content/plugins/lab-hal. Cette installation serait fonctionelle mais peu facilement upgradable. 
+*Cette archive contient le suffixe -master* est installerait le plugin dans une répertoire /wp-content/plugins/lab-hal **-master** au lieu de /wp-content/plugins/lab-hal. Cette installation serait fonctionelle mais peu facilement upgradable. 
 
-__Soyez patient une version opérationnelle sera prochainement disponible ! __
+__Soyez patient une version opérationnelle sera prochainement disponible !__
+
 # LAB-HAL
 - Contributors: Christophe Seguinot (lab-HAL), Baptiste Blondelle (wp-HAL), friz, CCSD , Emmanuel Leguy (partie Angular Js glanée sur le site https://www.cristal.univ-lille.fr)
 - Tags: publication, HAL
