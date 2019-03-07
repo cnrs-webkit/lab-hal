@@ -99,7 +99,7 @@ add_filter( 'query_vars', 'add_query_vars_filter' );
  */
 function lab_hal_load_language() {
 	//TODO languages not implemented yet!
-	load_plugin_textdomain( 'lab-hal', false, dirname( plugin_basename( __FILE__ ) ) . '/LAB_HAL_LANG/' );
+	// load_plugin_textdomain( 'lab-hal', false, dirname( plugin_basename( __FILE__ ) ) . '/LAB_HAL_LANG/' );
 }
 
 add_action( 'plugins_loaded', 'lab_hal_load_language' );

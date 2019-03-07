@@ -320,7 +320,7 @@ function lab_hal_set_option() {
 }
 
 /**
- * Lab-HAL plugin update function
+ * Lab-HAL plugin update function runned after the Wordpress plugin update
  *
  * This should be run each time the plugin is updated (manually or not), after the WordPress process of plugin updating
  * So this code runs the new (updated) plugin CODE
@@ -328,12 +328,9 @@ function lab_hal_set_option() {
  * So it is not executed if admin is not launched (manual upgrade with no admin browsing)
  */
 function lab_hal_detect_need_update() {
-	// Define if this plugin/theme need update or not ?
+	// Do not echo anything in this function, this breaks wordpress!
 	$previous_version = get_option( 'LAB_HAL_VERSION', -1 ); // no version saved in former 0.0 version.
 
-	if ( WP_DEBUG ) {
-		echo '<br />previous = ' . esc_html( $previous_version ) . '<br /> current = ' . esc_html( 'LAB_HAL_VERSION' );
-	}
 
 	if ( version_compare( LAB_HAL_VERSION, $previous_version, '==' ) ) {
 		// Identical version: no upgrade needed !
@@ -353,27 +350,34 @@ add_action( 'admin_init', 'lab_hal_detect_need_update' );
 /**
  * This function update settings and database when needed
  *
+ * $new_version is > to $previous_version
+ *
  * @param string $previous_version : installed version (previous).
  * @param string $new_version : update package version (new).
  */
 function lab_hal_update( $previous_version = '', $new_version = '' ) {
+	// Do not echo anything in this function, this breaks wordpress!
+	$messages = array();
 
 	// Its a good practice to limit update conditionnally to $previous_version AND $new_version.
-	// Upgrade from version -1 to 0.0.
+
 	if ( version_compare( $previous_version, '0.0', '<' ) &&
 			version_compare( $new_version, '0.0', '>=' ) ) {
-		if ( WP_DEBUG ) {
-			echo 'Upgrade from version -1 to 0.0.: delete unused option';
-		}
-		// Delete unused option.
+			// Upgrade from version -1 to some version >0.0.
+			$messages[]= array('message' => "Lab-Hal : Upgrade from version $previous_version to $new_version",
+				'notice-level' => 'notice-info' );
+			LAbHalAdminNotices::addNotices( $messages  );
+	}
+	if ( version_compare( $previous_version, '0.0', '<' ) ) {
+		// previous_version <=0.0 : Delete unused option.
 		delete_option( 'lab_hal_option_lang' );
-		// Initialize new options : add_option does nothing if the option already exists.
+		// previous_version <=0.0: Initialize new options : add_option does nothing if the option already exists.
 		add_option( 'lab_hal_option_lastyears', '-4' );
 		add_option( 'lab_hal_option_maxauthors', '8' );
 		add_option( 'lab_hal_option_nbMaxEntrees', '200' );
 	}
 
-	// TODO TEMP update_option('LAB_HAL_VERSION', LAB_HAL_VERSION); !
+	update_option('LAB_HAL_VERSION', LAB_HAL_VERSION);
 }
 
 /**
@@ -420,4 +424,39 @@ function lab_hal_admin_help() {
 		)
 	);
 
+}
+
+add_action('admin_notices', [new LabHalAdminNotices(), 'displayAdminNotice']);
+/**
+ * Class used to display notice message in admin
+ * @author seguinot
+ *
+ */
+class LabHalAdminNotices
+{
+	const NOTICE_FIELD = 'lab_hal_admin_notices';
+
+	public function displayAdminNotice()
+	{
+		$notices = get_option(self::NOTICE_FIELD);
+		if ( empty( $notices ) ) {
+			return;
+		}
+		foreach ($notices as $notice) {
+			$message     = isset($notice['message']) ? $notice['message'] : false;
+			$noticeLevel = ! empty($notice['notice-level']) ? $notice['notice-level'] : 'notice-error';
+
+			if ($message) {
+				echo "<div class='notice {$noticeLevel} is-dismissible'><p>{$message}</p></div>";
+			}
+		}
+		delete_option(self::NOTICE_FIELD);
+	}
+
+	public static function addNotices( $notices ) {
+		if ( $notices ) {
+			update_option(self::NOTICE_FIELD, $notices);
+		}
+
+	}
 }
