@@ -15,13 +15,14 @@ __Soyez patient une version opérationnelle sera prochainement disponible !__
 * License: GPLv3
 * License URI: <http://www.gnu.org/licenses/gpl-3.0.html>
 
-<!-- ## Description section NOT USED to display description in Wordpress Admin panel --> 
 
 ## Description
+
+<!-- ## Description section NOT USED to display description in Wordpress Admin panel --> 
 
 This plugin allows authors or structures to display their HAL registered publications on a Wordpress article or page.
 LAB-HAL publication data are directly extracted from HAL website (http://hal.archives-ouvertes.fr/).
 
-Ce plugin est une adaptation du plugin wp-HAL de Baptiste Blondelle . Il Crée une page qui remonte les publications d'un auteur ou d'une structure en relation avec HAL et un widget des dernières publications d'un auteur ou d'une structure.
+Ce plugin est une adaptation du plugin wp-HAL de Baptiste Blondelle . Il Crée une page qui remonte les publications d'un auteur ou d'une structure en relation avec HAL et un widget des dernières publications d'un auteur ou d'une structure. 
  
 

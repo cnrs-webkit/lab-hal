@@ -8,10 +8,8 @@ Stable tag: master
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-
-<!-- ## Description section IS USED to display description in Wordpress Admin panel --> 
-
 ## Description
+<!-- ## Description section IS USED to display description in Wordpress Admin panel --> 
 
 This plugin allows authors or structures to display their HAL registered publications on a Wordpress article or page.
 LAB-HAL publication data are directly extracted from HAL website (http://hal.archives-ouvertes.fr/).
@@ -23,11 +21,11 @@ Ce plugin est une adaptation du plugin wp-HAL de Baptiste Blondelle . Il Crée u
 - le graphique affichant les statistiques par type de publications n'a pas été impléménte/testé
 - Merci de remonter les bugs et propositions à l'auteur 
 
-<!-- ## FAQ section IS USED to display description in Wordpress Admin panel --> 
  
 ## Frequently Asked Questions
+<!-- ## FAQ section IS USED to display description in Wordpress Admin panel --> 
 
-## Installation / Usage
+### Installation / Usage
 comming soon!
 
 #### Manual installation/upgrade procedure :
