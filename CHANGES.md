@@ -3,6 +3,8 @@
 #### [To appear in next release]
 
 * 
+#### Version 0.5 (2019 Mar. 8)
+* remove comment in CHANGES.md
 
 #### Version 0.3 (2019 Mar. 8)
 
