@@ -1,8 +1,7 @@
 ##Lab-HAL TODO list
 
 #### High Priority tasks
-- [ ] 
-- [ ] 
+- [ ]
 - [ ] 
 
 #### Other tasks
