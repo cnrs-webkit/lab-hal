@@ -1,5 +1,3 @@
-<!-- This file is used to display changelog in Wordpress Admin panel--> 
-
 ## Changelog
 
 #### [To appear in next release]
