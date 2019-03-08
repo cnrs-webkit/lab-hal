@@ -2,7 +2,6 @@
 
 #### High Priority tasks
 - [ ]
-- [ ] 
 
 #### Other tasks
 - [ ] merge master -> develop
