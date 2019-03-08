@@ -1,8 +1,9 @@
 <!-- This file is used to display changelog in Wordpress Admin panel--> 
+
 ## Changelog
 
 #### [To appear in next release]
-
+- ?
 #### Version 0.2 (2019 Mar. 8)
 - Add CHANGELOG.md and readme.txt
 

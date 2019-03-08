@@ -23,4 +23,26 @@ Ce plugin est une adaptation du plugin wp-HAL de Baptiste Blondelle . Il Crée u
 - le graphique affichant les statistiques par type de publications n'a pas été impléménte/testé
 - Merci de remonter les bugs et propositions à l'auteur 
 
+<!-- ## FAQ section IS USED to display description in Wordpress Admin panel --> 
  
+## Frequently Asked Questions
+
+## Installation / Usage
+comming soon!
+
+#### Manual installation/upgrade procedure :
+
+1. Desactivate lab-hal plugin if you have the previous version installed.
+2. Unzip "lab-hal" archive and put all files into folder "/wp-content/plugins/lab-hal".
+3. Activate "lab-hal" plugin via 'Plugins' menu in WordPress admin menu.
+
+#### How to display publication list on the site ?
+
+You need to create your own page with wordpress and put the shortcode [lab-hal-list] on the content.
+Further information goto settings/lab-hal and open upper right help tab.
+
+#### Wiki 
+comming soon!
+
+#### Support 
+comming soon!
