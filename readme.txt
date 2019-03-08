@@ -9,24 +9,23 @@ License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 ## Description
-<!-- ## Description section IS USED to display description in Wordpress Admin panel --> 
 
 This plugin allows authors or structures to display their HAL registered publications on a Wordpress article or page.
 LAB-HAL publication data are directly extracted from HAL website (http://hal.archives-ouvertes.fr/).
 
 Ce plugin est une adaptation du plugin wp-HAL de Baptiste Blondelle . Il Crée une page qui remonte les publications d'un auteur ou d'une structure en relation avec HAL et un widget des dernières publications d'un auteur ou d'une structure.
 
-- Ce plugin est en cours de développement, quelques fonctionnalités du plugin original ne sont pas encore implémentées. 
-- le widget dernières publications n'a pas été impléménte/testé
-- le graphique affichant les statistiques par type de publications n'a pas été impléménte/testé
-- Merci de remonter les bugs et propositions à l'auteur 
+* Ce plugin est en cours de développement, quelques fonctionnalités du plugin original ne sont pas encore implémentées. 
+* le widget dernières publications n'a pas été impléménte/testé
+* Le graphique affichant les statistiques par type de publications n'a pas été impléménte/testé
+* Merci de remonter les bugs et propositions à l'auteur 
 
  
 ## Frequently Asked Questions
-<!-- ## FAQ section IS USED to display description in Wordpress Admin panel --> 
 
 ### Installation / Usage
-comming soon!
+
+coming soon!
 
 #### Manual installation/upgrade procedure :
 
@@ -36,11 +35,14 @@ comming soon!
 
 #### How to display publication list on the site ?
 
-You need to create your own page with wordpress and put the shortcode [lab-hal-list] on the content.
-Further information goto settings/lab-hal and open upper right help tab.
+You need to create your own page with wordpress and put the shortcode __[lab-hal-list]__ on the content.
+Further information goto __settings/lab-hal__ and open upper right __help tab__.
 
 #### Wiki 
-comming soon!
+
+coming soon!
 
 #### Support 
-comming soon!
+
+coming soon!
+

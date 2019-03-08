@@ -6,7 +6,7 @@ __N'utiliser pas la version téléchargeable sur cette page du plugin (lab-hal-m
 __Soyez patient une version opérationnelle sera prochainement disponible !__
 
 # LAB-HAL
-* Contributors: [Christophe Seguinot] (https://github.com/ChristopheSeguinot), [Baptiste Blondelle (wp-HAL)], [friz (wp-HAL)], [CCSD (wp-HAL)] , [Emmanuel Leguy (partie Angular Js glanée sur le site https://www.cristal.univ-lille.fr)]
+* Contributors: [Christophe Seguinot] (https://github.com/ChristopheSeguinot), Baptiste Blondelle (wp-HAL), [friz (wp-HAL)], [CCSD (wp-HAL)] , Emmanuel Leguy (partie Angular Js glanée sur le site https://www.cristal.univ-lille.fr)
 * Tags: publication, HAL
 * Requires at least: 4.9
 * Tested up to: 5.1
@@ -17,8 +17,6 @@ __Soyez patient une version opérationnelle sera prochainement disponible !__
 
 
 ## Description
-
-<!-- ## Description section NOT USED to display description in Wordpress Admin panel --> 
 
 This plugin allows authors or structures to display their HAL registered publications on a Wordpress article or page.
 LAB-HAL publication data are directly extracted from HAL website (http://hal.archives-ouvertes.fr/).

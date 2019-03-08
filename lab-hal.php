@@ -11,7 +11,7 @@
  * Plugin Name:  LAB-HAL
  * Plugin URI:   https://github.com/cnrs-webkit/lab-hal
  * Description:  Ce plugin est une adaptation du plugin wp-HAL de Baptiste Blondelle . Il Crée une page qui remonte les publications d'un auteur ou d'une structure en relation avec HAL et un widget des dernières publications d'un auteur ou d'une structure.
- * Version:      0.3
+ * Version:      0.4
  * Author:       Christophe Seguinot
  * License:      http://www.gnu.org/licenses/gpl-3.0.html
  * Contributors: Baptiste Blondelle (wp-HAL), Emmanuel Leguy (partie Angular Js glanée sur le site https://www.cristal.univ-lille.fr)
@@ -22,7 +22,7 @@
  */
 
 // Constante de Version.
-define( 'LAB_HAL_VERSION', '0.3' );
+define( 'LAB_HAL_VERSION', '0.4' );
 
 // Constante pour l'api utilisé par le widget.
 define( 'LAB_HAL_API', 'http://api.archives-ouvertes.fr/search/hal/' );
