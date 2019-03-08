@@ -1,8 +1,15 @@
+<?php
 /**
- * 
- * 
- * 
- */
+ * Plugin lab-hal
+ *
+ * @package     lab-hal
+ * @since       0.0
+ * @author      Christophe Seguinot
+ * @link        https://github.com/cnrs-webkit/lab-hal
+ * @license     GPL-3.0
+ /
+ 
+
 var app = angular.module('PublisApp',["ngSanitize"]);
 
 app.factory('PublisFactory', function($http, $q){

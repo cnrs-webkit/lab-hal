@@ -5,7 +5,7 @@
  * @package     lab-hal
  * @since       0.0
  * @author      Christophe Seguinot
- * @copyright   2016 Christophe Seguinot
+ * @link        https://github.com/cnrs-webkit/lab-hal
  * @license     GPL-3.0
  *
  * Plugin Name:  LAB-HAL
