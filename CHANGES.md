@@ -1,6 +1,9 @@
 #### [To appear in next release]
 
 * 
+#### Version 0.52 (2019 Mar. 8)
+* tests
+
 #### Version 0.5 (2019 Mar. 8)
 * remove comment in CHANGES.md
 
