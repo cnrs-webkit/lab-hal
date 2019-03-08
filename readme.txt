@@ -1,5 +1,5 @@
 # LAB-HAL
-Contributors: Christophe Seguinot (lab-HAL), Baptiste Blondelle (wp-HAL), friz, CCSD , Emmanuel Leguy (partie Angular Js glanée sur le site https://www.cristal.univ-lille.fr)
+Contributors: [Christophe Seguinot] (https://github.com/ChristopheSeguinot), Baptiste Blondelle (wp-HAL), friz, CCSD , Emmanuel Leguy (partie Angular Js glanée sur le site https://www.cristal.univ-lille.fr)
 Tags: publication, HAL
 Requires at least: 4.9
 Tested up to: 5.1

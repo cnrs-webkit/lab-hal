@@ -1,5 +1,3 @@
-## Changelog
-
 #### [To appear in next release]
 
 * 
