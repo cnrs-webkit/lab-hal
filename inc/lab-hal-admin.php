@@ -35,7 +35,7 @@ add_filter( 'upgrader_pre_download', 'lab_hal_upgrader_pre_download', 10, 3 );
  * Add a hook to force install in lab-hal-master or lab-hal-tag in lab-hal directory (instead of lab-hal-tags
  * source: https://github.com/YahnisElsts/plugin-update-checker/issues/1
  */
-public function plugin_setup()
+function plugin_setup()
 {
     add_filter( 'upgrader_source_selection', array( $this, 'lab_hal_rename_install_folder' ), 1, 3);
 }
@@ -50,7 +50,7 @@ public function plugin_setup()
  * @param object $thiz
  * @return string
  */
-public function lab_hal_rename_install_folder( $source, $remote_source, $thiz )
+function lab_hal_rename_install_folder( $source, $remote_source, $thiz )
 {
 	if(  false === strpos( $source, 'lab-hal') ){
 		// Only fired for 'lab-hal'!

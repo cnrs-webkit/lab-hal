@@ -30,9 +30,9 @@ define( 'LAB_HAL_API', 'http://api.archives-ouvertes.fr/search/hal/' );
 // Constante pour le tri par date utilisé par le widget.
 define( 'LAB_HAL_PRODUCEDDATEY', rawurlencode( 'producedDateY_i desc' ) );
 
-// lab-hal plugin directory
-define( 'LAB_HAL_URI',  plugin_dir_url( __FILE__ ) );
-define( 'LAB_HAL_DIR',  dirname( __FILE__ ) );
+// lab-hal plugin directory.
+define( 'LAB_HAL_URI', plugin_dir_url( __FILE__ ) );
+define( 'LAB_HAL_DIR', dirname( __FILE__ ) );
 
 if ( is_admin() ) {
 	require_once LAB_HAL_DIR . '/inc/lab-hal-admin.php';
@@ -91,7 +91,7 @@ add_filter( 'query_vars', 'add_query_vars_filter' );
  * Load one of the existing language translation (FR, ES), or GB english as a default
  */
 function lab_hal_load_language() {
-	//TODO languages not implemented yet!
+	// TODO languages not implemented yet!
 	// load_plugin_textdomain( 'lab-hal', false, dirname( plugin_basename( __FILE__ ) ) . '/LAB_HAL_LANG/' );
 }
 
