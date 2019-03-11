@@ -1,5 +1,4 @@
 <?php
-<?php
 /**
  * Plugin lab-hal
  *

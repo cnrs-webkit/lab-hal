@@ -9,6 +9,27 @@
  * @license     GPL-3.0
  */
 
+
+/**
+ * Rename on activation.
+ *
+ * adapted from : https://github.com/afragen/github-updater/src/GitHub_Updater/Init.php
+ * Correctly renames the slug when lab-hal is installed
+ * via FTP or from plugin upload from Github.
+ *
+ * `rename()` causes activation to fail.
+ *
+ * @return void
+ */
+function lab_hal_rename_on_activation() {
+	$plugin_dir = trailingslashit( WP_PLUGIN_DIR );
+	$slug       = isset( $_GET['plugin'] ) ? $_GET['plugin'] : false;
+
+	if ( $slug && 'lab-hal/lab-hal.php' !== $slug ) {
+		@rename( $plugin_dir . dirname( $slug ), $plugin_dir . 'lab-hal' );
+	}
+}
+
 /**
  *  Define the upgrader_pre_download callback to stop upgrade if folder is a git or an Eclipse project.
  *
@@ -32,13 +53,11 @@ function lab_hal_upgrader_pre_download( $reply, $package, $instance ) {
 add_filter( 'upgrader_pre_download', 'lab_hal_upgrader_pre_download', 10, 3 );
 
 /**
- * Add a hook to force install in lab-hal-master or lab-hal-tag in lab-hal directory (instead of lab-hal-tags
- * source: https://github.com/YahnisElsts/plugin-update-checker/issues/1
+ * Add a hook to force upgrade of lab-hal-master or lab-hal-tag in lab-hal directory (instead of lab-hal-tags
+ * see: https://github.com/YahnisElsts/plugin-update-checker/issues/1
+ * Note: this is not used at install, because lab-hal is not yet activated !!
  */
-function plugin_setup()
-{
-    add_filter( 'upgrader_source_selection', array( $this, 'lab_hal_rename_install_folder' ), 1, 3);
-}
+add_filter( 'upgrader_source_selection', 'lab_hal_rename_install_folder', 1, 3);
 
 /**
  * Removes the prefix "-master" or "-tags" when installating from GitHub zip files
@@ -52,19 +71,41 @@ function plugin_setup()
  */
 function lab_hal_rename_install_folder( $source, $remote_source, $thiz )
 {
+	$newsource = trailingslashit( $path_parts['dirname'] ) . trailingslashit( 'lab-hal' );
+	$messages[]= array('message' => "Lab-Hal2 install: Source = $source ==> $newsource ",
+		'notice-level' => 'notice-info' );
+	LAbHalAdminNotices::addNotices( $messages  );
+var_dump($source) ;
+var_dump($remote_source);
+var_dump($thiz);
+die('TOTO');
 	if(  false === strpos( $source, 'lab-hal') ){
 		// Only fired for 'lab-hal'!
 		return $source;
 	}
 
-	if(  true === is_plugin_active( 'github-updater' ) ){
-		// Note that this function should not be used if afragen/github-updater is activated!
+	if(  true === is_plugin_active( 'github-updater') && true === is_plugin_active( 'lab-hal') ) {
+		/* Upgrade of 'lab-hal' while afragen/github-updater is already activated
+		 * Do not modify $source, lab-hal install/upgrade is managed by afragen/github-updater
+		 */
+		return $source;
+	}
+	// TODO in case lab-hal active BUT github-updater not used for upgrading !!
+	/*
+	 * Not GitHub Updater plugin/theme.
+	 */
+	if ( ! isset( $_POST['github_updater_repo'] ) && empty( $repo ) ) {
 		return $source;
 	}
 
-    $path_parts = pathinfo( $source );
+	// Installation of 'lab-hal'
+	$path_parts = pathinfo( $source );
     $newsource = trailingslashit( $path_parts['dirname'] ) . trailingslashit( 'lab-hal' );
     rename( $source, $newsource );
+    $toto = fprintf( $thiz);
+    $messages[]= array('message' => "Lab-Hal install: folder renamed from $source to $newsource <br>".$toto,
+    	'notice-level' => 'notice-info' );
+    LAbHalAdminNotices::addNotices( $messages  );
     return $newsource;
 }
 
