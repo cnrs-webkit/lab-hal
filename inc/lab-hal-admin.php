@@ -32,6 +32,43 @@ function lab_hal_upgrader_pre_download( $reply, $package, $instance ) {
 add_filter( 'upgrader_pre_download', 'lab_hal_upgrader_pre_download', 10, 3 );
 
 /**
+ * Add a hook to force install in lab-hal-master or lab-hal-tag in lab-hal directory (instead of lab-hal-tags
+ * source: https://github.com/YahnisElsts/plugin-update-checker/issues/1
+ */
+public function plugin_setup()
+{
+    add_filter( 'upgrader_source_selection', array( $this, 'lab_hal_rename_install_folder' ), 1, 3);
+}
+
+/**
+ * Removes the prefix "-master" or "-tags" when installating from GitHub zip files
+ *
+ * See: https://github.com/YahnisElsts/plugin-update-checker/issues/1
+ *
+ * @param string $source
+ * @param string $remote_source
+ * @param object $thiz
+ * @return string
+ */
+public function lab_hal_rename_install_folder( $source, $remote_source, $thiz )
+{
+	if(  false === strpos( $source, 'lab-hal') ){
+		// Only fired for 'lab-hal'!
+		return $source;
+	}
+
+	if(  true === is_plugin_active( 'github-updater' ) ){
+		// Note that this function should not be used if afragen/github-updater is activated!
+		return $source;
+	}
+
+    $path_parts = pathinfo( $source );
+    $newsource = trailingslashit( $path_parts['dirname'] ) . trailingslashit( 'lab-hal' );
+    rename( $source, $newsource );
+    return $newsource;
+}
+
+/**
  * Add an anction link in admin for lab-hal
  *
  * @param array  $links : list of action.

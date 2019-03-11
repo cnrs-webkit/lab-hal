@@ -1,6 +1,7 @@
 #### [To appear in next release]
 
-* 
+* New : GitHub zip archive force installation in lab-hal folder (whatever -master or -tag is used)
+
 #### Version 0.52 (2019 Mar. 8)
 * tests
 
