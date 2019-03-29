@@ -231,7 +231,7 @@ function lab_hal_list( $param ) {
  * Add styles
  */
 function lab_hal_wp_adding_style() {
-	wp_register_style( 'lab-hal-style1', LAB_HAL_URI . '/css/style.css', '', LAB_HAL_VERSION );
+	wp_register_style( 'lab-hal-style1', LAB_HAL_URI . 'css/style.css', '', LAB_HAL_VERSION );
 	// TODO not used wp_register_style( 'lab-hal-style2', plugins_url( '/css/jquery.jqplot.css', __FILE__ ), '', LAB_HAL_VERSION );.
 	wp_enqueue_style( 'lab-hal-style1' );
 }
@@ -240,11 +240,11 @@ function lab_hal_wp_adding_style() {
  * Register and Add scripts
  */
 function lab_hal_wp_adding_script() {
-	wp_register_script( 'lab-hal-script1', LAB_HAL_URI . '/js/jquery.jqplot.js', '', '1.0.8', true );
-	wp_register_script( 'lab-hal-script2', LAB_HAL_URI . '/js/jqplot.highlighter.js', '', '1.0.8', true );
-	wp_register_script( 'lab-hal-script3', LAB_HAL_URI . '/js/jqplot.pieRenderer.js', '', '1.0.8', true );
+	wp_register_script( 'lab-hal-script1', LAB_HAL_URI . 'js/jquery.jqplot.js', '', '1.0.8', true );
+	wp_register_script( 'lab-hal-script2', LAB_HAL_URI . 'js/jqplot.highlighter.js', '', '1.0.8', true );
+	wp_register_script( 'lab-hal-script3', LAB_HAL_URI . 'js/jqplot.pieRenderer.js', '', '1.0.8', true );
 
-	wp_register_script( 'lab-hal-publis', LAB_HAL_URI . '/js/publis.js', '', LAB_HAL_VERSION, true );
+	wp_register_script( 'lab-hal-publis', LAB_HAL_URI . 'js/publis.js', '', LAB_HAL_VERSION, true );
 	wp_register_script( 'lab-hal-angular', 'https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js', '', '1.7.7', true );
 	wp_register_script( 'lab-hal-angular-sanitize', 'https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular-sanitize.min.js', '', '1.7.7', true );
 
@@ -253,7 +253,7 @@ function lab_hal_wp_adding_script() {
 	wp_enqueue_script( 'lab-hal-angular-sanitize' );
 	wp_enqueue_script( 'lab-hal-publis' );
 
-	wp_enqueue_script( 'lab-hal-script4', LAB_HAL_URI . '/js/cv-hal.js', '', LAB_HAL_VERSION, true );
+	wp_enqueue_script( 'lab-hal-script4', LAB_HAL_URI . 'js/cv-hal.js', '', LAB_HAL_VERSION, true );
 }
 
 /**

@@ -53,64 +53,49 @@ function lab_hal_upgrader_pre_download( $reply, $package, $instance ) {
 add_filter( 'upgrader_pre_download', 'lab_hal_upgrader_pre_download', 10, 3 );
 
 /**
- * Add a hook to force upgrade of lab-hal-master or lab-hal-tag in lab-hal directory (instead of lab-hal-tags
- * see: https://github.com/YahnisElsts/plugin-update-checker/issues/1
- * Note: this is not used at install, because lab-hal is not yet activated !!
- */
-add_filter( 'upgrader_source_selection', 'lab_hal_rename_install_folder', 1, 3);
-
-/**
- * Removes the prefix "-master" or "-tags" when installating from GitHub zip files
+ * Filter the plugin_api_result shown in plugin details
  *
- * See: https://github.com/YahnisElsts/plugin-update-checker/issues/1
+ * This function modify plugin details extracted from readme.txt allowing to give profile information
+ * for users not having wordpress.org profile. This function keep the contributors list unchanged
+ * excepted for those users for which change are provide.
  *
- * @param string $source
- * @param string $remote_source
- * @param object $thiz
- * @return string
+ * $res    (object|WP_Error) Response object or WP_Error.
+ * $action (string) The type of information being requested from the Plugin Installation API.
+ * $args   (object) Plugin API arguments.
+ *
+ * return modified $res
  */
-function lab_hal_rename_install_folder( $source, $remote_source, $thiz )
-{
-	$newsource = trailingslashit( $path_parts['dirname'] ) . trailingslashit( 'lab-hal' );
-	$messages[]= array('message' => "Lab-Hal2 install: Source = $source ==> $newsource ",
-		'notice-level' => 'notice-info' );
-	LAbHalAdminNotices::addNotices( $messages  );
-var_dump($source) ;
-var_dump($remote_source);
-var_dump($thiz);
-die('TOTO');
-	if(  false === strpos( $source, 'lab-hal') ){
-		// Only fired for 'lab-hal'!
-		return $source;
-	}
+add_filter( 'plugins_api_result', 'lab_hal_plugins_api_result', 10, 3 );
 
-	if(  true === is_plugin_active( 'github-updater') && true === is_plugin_active( 'lab-hal') ) {
-		/* Upgrade of 'lab-hal' while afragen/github-updater is already activated
-		 * Do not modify $source, lab-hal install/upgrade is managed by afragen/github-updater
-		 */
-		return $source;
+function lab_hal_plugins_api_result ($res, $action, $args ) {
+	if (is_wp_error($res) ) {
+		return $res;
 	}
-	// TODO in case lab-hal active BUT github-updater not used for upgrading !!
-	/*
-	 * Not GitHub Updater plugin/theme.
-	 */
-	if ( ! isset( $_POST['github_updater_repo'] ) && empty( $repo ) ) {
-		return $source;
+	if ('lab-hal' !== $res->slug) {
+		return $res;
 	}
-
-	// Installation of 'lab-hal'
-	$path_parts = pathinfo( $source );
-    $newsource = trailingslashit( $path_parts['dirname'] ) . trailingslashit( 'lab-hal' );
-    rename( $source, $newsource );
-    $toto = fprintf( $thiz);
-    $messages[]= array('message' => "Lab-Hal install: folder renamed from $source to $newsource <br>".$toto,
-    	'notice-level' => 'notice-info' );
-    LAbHalAdminNotices::addNotices( $messages  );
-    return $newsource;
+	foreach ($res->contributors as $key => $contributor) {
+		// Please upgrade this list whenever readme.txt contributors list is changed!
+		if (false !== strpos ($key, ('Seguinot'))) {
+			$res->contributors[$key]["display_name"]='Christophe Seguinot (lab-hal)';
+			$res->contributors[$key]["profile"] = 'https://github.com/ChristopheSeguinot';
+			$res->contributors[$key]["avatar"] = 'https://avatars2.githubusercontent.com/u/48071769?s=40&v=4';
+		}
+		if (false !== strpos ($key, ('Blondelle'))) {
+			$res->contributors[$key]["display_name"]='Baptiste Blondelle (wp-HAL)';
+			$res->contributors[$key]["profile"] = 'https://profiles.wordpress.org/friz/';
+			$res->contributors[$key]["avatar"] = 'https://wordpress.org/grav-redirect.php?user=friz';
+		}
+		if (false !== strpos ($key, ('Leguy'))) {
+			$res->contributors[$key]["display_name"]='Emmanuel Leguy (Angular js code)';
+			$res->contributors[$key]["profile"] = 'https://www.cristal.univ-lille.fr/';
+		}
+	}
+	return $res;
 }
 
 /**
- * Add an anction link in admin for lab-hal
+ * Add an action link in admin for lab-hal
  *
  * @param array  $links : list of action.
  * @param string $file : name of the current plugin.
@@ -398,7 +383,10 @@ function lab_hal_detect_need_update() {
 	// Do not echo anything in this function, this breaks wordpress!
 	$previous_version = get_option( 'LAB_HAL_VERSION', -1 ); // no version saved in former 0.0 version.
 
-
+	if ( -1 === $previous_version && ! is_plugin_active('lab-hal') ) {
+	    // This is a fresh install
+	    return; 
+	}
 	if ( version_compare( LAB_HAL_VERSION, $previous_version, '==' ) ) {
 		// Identical version: no upgrade needed !
 		return;
@@ -444,6 +432,7 @@ function lab_hal_update( $previous_version = '', $new_version = '' ) {
 		add_option( 'lab_hal_option_nbMaxEntrees', '200' );
 	}
 
+	//TODO remove option on uninstall 
 	update_option('LAB_HAL_VERSION', LAB_HAL_VERSION);
 }
 
@@ -493,7 +482,7 @@ function lab_hal_admin_help() {
 
 }
 
-add_action('admin_notices', [new LabHalAdminNotices(), 'displayAdminNotice']);
+add_action('admin_notices', array('LabHalAdminNotices', 'displayAdminNotice') );
 /**
  * Class used to display notice message in admin
  * @author seguinot
@@ -503,7 +492,7 @@ class LabHalAdminNotices
 {
 	const NOTICE_FIELD = 'lab_hal_admin_notices';
 
-	public function displayAdminNotice()
+	public static function displayAdminNotice()
 	{
 		$notices = get_option(self::NOTICE_FIELD);
 		if ( empty( $notices ) ) {

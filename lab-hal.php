@@ -35,7 +35,7 @@ define( 'LAB_HAL_URI', plugin_dir_url( __FILE__ ) );
 define( 'LAB_HAL_DIR', dirname( __FILE__ ) );
 
 if ( is_admin() ) {
-	// register must be in the main  plugin __FILE__
+	// register_activation_hook must be called whitin the main plugin __FILE__ because folder is lab-hal + unkown suffix!
 	register_activation_hook( __FILE__, 'lab_hal_rename_on_activation' );
 	require_once LAB_HAL_DIR . '/inc/lab-hal-admin.php';
 } else {
