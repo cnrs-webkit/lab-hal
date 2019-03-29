@@ -97,6 +97,9 @@ function lab_hal_list( $param ) {
 	$lab_hal_option_maxauthors = 0 === $lab_hal_option_maxauthors ? 999 : $lab_hal_option_maxauthors;
 
 	$lab_hal_option_nb_max_entrees = get_option( 'lab_hal_option_nbMaxEntrees', 0 );
+	// If unset its equal to "";
+	$lab_hal_option_nb_max_entrees = $lab_hal_option_nb_max_entrees ?
+	       $lab_hal_option_nb_max_entrees : 0;
 	// override $lab_hal_option_nb_max_entrees when query_vars['extractall'] is used.
 	if ( isset( $wp_query->query_vars['extractall'] ) ) {
 		$lab_hal_option_nb_max_entrees = 0;
