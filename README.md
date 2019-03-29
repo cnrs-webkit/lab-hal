@@ -1,9 +1,21 @@
 # ATTENTION version de test et de développement
-__N'utiliser pas la version téléchargeable sur cette page du plugin (lab-hal-master.zip).__
+Ce plugin peut comporter quelques bugs. 
+## Installation 
+Cette procédure sera prochainement détaillée dans le wiki 
 
-*Cette archive contient le suffixe -master* est installerait le plugin dans une répertoire /wp-content/plugins/lab-hal **-master** au lieu de /wp-content/plugins/lab-hal. Cette installation serait fonctionelle mais peu facilement upgradable.
-
-__Soyez patient une version opérationnelle sera prochainement disponible !__
+* Installer et activer  GitHub Updater
+  * https://github.com/afragen/github-updater/wiki/Installation (installation "Upload" ou "Manual")
+  * N.B. Github Updater sera également utilisé pour la mise à niveau du cnrswebkit (et de mes autres plugin sur GitHub
+* Se rendre dans le menu réglages de GitHub Updater
+  *  il n'y a aucun réglage à faire en fait! 
+  * cliquer sur l'onglet "installer l'extension' 
+  * donner l'URL plugin: https://github.com/cnrs-webkit/lab-hal
+  * (branche de référence: master; hébergeur du dépôt: GitHub)
+* cliquer sur "installer l'extension" 
+* Retourner sur la page des extensions
+* activer lab-HAL
+* régler les paramètres de Lab-HAL
+  * N.B. l'onglet "aide" de cette page  (en haut à droite) section "how to" précise comment créer la page des publications
 
 # LAB-HAL
 * Contributors: [Christophe Seguinot] (https://github.com/ChristopheSeguinot), Baptiste Blondelle (wp-HAL), [friz (wp-HAL)], [CCSD (wp-HAL)] , Emmanuel Leguy (partie Angular Js glanée sur le site https://www.cristal.univ-lille.fr)
