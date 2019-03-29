@@ -21,6 +21,19 @@
  * GitHub Plugin URI: https://github.com/cnrs-webkit/lab-hal
  */
 
+function cnrswebkit_unregister_some_post_type() {
+    if (headers_sent()) {
+        die("Redirect failed. Please click on this link: <a href=...>");
+    }
+    
+    // unregister_post_type( 'contact' );
+}
+
+// Pods use default priority 10, higher must be used here
+// TODO add_action('init','cnrswebkit_unregister_some_post_type', 20, 0);
+add_action('registered_taxonomy','cnrswebkit_unregister_some_post_type', 20, 0);
+
+
 // Constante de Version.
 define( 'LAB_HAL_VERSION', '0.6' );
 
